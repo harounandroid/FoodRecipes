@@ -1,5 +1,6 @@
 package com.po4yka.foodrecipes.data
 
+import android.util.Log
 import com.po4yka.foodrecipes.data.network.FoodRecipesApi
 import com.po4yka.foodrecipes.models.FoodJoke
 import com.po4yka.foodrecipes.models.FoodRecipe
@@ -11,6 +12,7 @@ class RemoteDataSource @Inject constructor(
 ) {
 
     suspend fun getRecipes(queries: Map<String, String>): Response<FoodRecipe> {
+        Log.e("data",queries.toString())
         return foodRecipesApi.getRecipes(queries)
     }
 

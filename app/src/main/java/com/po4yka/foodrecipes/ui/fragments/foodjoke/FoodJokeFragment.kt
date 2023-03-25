@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.po4yka.foodrecipes.R
 import com.po4yka.foodrecipes.databinding.FragmentFoodJokeBinding
-import com.po4yka.foodrecipes.util.Constants.Companion.API_KEY
+import com.po4yka.foodrecipes.util.Constants
 import com.po4yka.foodrecipes.util.NetworkResult
 import com.po4yka.foodrecipes.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,7 +36,7 @@ class FoodJokeFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        mainViewModel.getFoodJoke(API_KEY)
+        mainViewModel.getFoodJoke(Constants.API_KEY)
         mainViewModel.foodJokeResponse.observe(viewLifecycleOwner, { response ->
             when (response) {
                 is NetworkResult.Success -> {
