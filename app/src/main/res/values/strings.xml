@@ -62,4 +62,7 @@
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
     <string name="share">Share</string>
     <string name="no_food_joke_image">No Food Joke Image</string>
+    <string name="no_internet">No Internet Connection.</string>
+    <string name="recipes_not_found">Recipes not found.</string>
+
 </resources>
