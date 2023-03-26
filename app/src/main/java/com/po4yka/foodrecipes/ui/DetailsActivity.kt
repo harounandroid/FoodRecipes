@@ -73,6 +73,7 @@ class DetailsActivity : AppCompatActivity() {
         }.attach()
 
         Log.e("load jokes",Constants.JOKES)
+        Log.e("Bug fixed","buf fixed here.")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
