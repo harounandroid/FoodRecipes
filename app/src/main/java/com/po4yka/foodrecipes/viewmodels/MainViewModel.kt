@@ -5,6 +5,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
+import com.po4yka.foodrecipes.R
 import com.po4yka.foodrecipes.data.Repository
 import com.po4yka.foodrecipes.data.database.entities.FavoritesEntity
 import com.po4yka.foodrecipes.data.database.entities.FoodJokeEntity
@@ -21,7 +22,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository,
-    application: Application
+    val application: Application
 ) : AndroidViewModel(application) {
 
     /** ROOM DATABASE */
@@ -118,10 +119,10 @@ class MainViewModel @Inject constructor(
                     offlineCacheFoodJoke(foodJoke)
                 }
             } catch (e: java.lang.Exception) {
-                foodJokeResponse.value = NetworkResult.Error("Recipes not found.")
+                foodJokeResponse.value = NetworkResult.Error(application.resources.getString(R.string.recipes_not_found))
             }
         } else {
-            foodJokeResponse.value = NetworkResult.Error("No Internet Connection.")
+            foodJokeResponse.value = NetworkResult.Error(application.resources.getString(R.string.no_internet))
         }
     }
 
