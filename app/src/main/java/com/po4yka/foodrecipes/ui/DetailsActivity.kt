@@ -18,6 +18,7 @@ import com.po4yka.foodrecipes.databinding.ActivityDetailsBinding
 import com.po4yka.foodrecipes.ui.fragments.ingredients.IngredientsFragment
 import com.po4yka.foodrecipes.ui.fragments.instructions.InstructionsFragment
 import com.po4yka.foodrecipes.ui.fragments.overview.OverviewFragment
+import com.po4yka.foodrecipes.util.Constants
 import com.po4yka.foodrecipes.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.po4yka.foodrecipes.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -70,6 +71,8 @@ class DetailsActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
             tab.text = titles[position]
         }.attach()
+
+        Log.e("load jokes",Constants.JOKES)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
